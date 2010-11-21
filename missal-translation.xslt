@@ -1,34 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:import href="yql_translation.xslt"/>
+  <xsl:import href="translation.xslt"/>
 	<xsl:output method="xml" indent="yes"/>
   <xsl:param name="languages"> 
-    <de>X</de>
+    <de></de>
     <en>X</en>
-    <es>X</es>
-    <fr>X</fr>
-    <it>X</it>
-    <nl>X</nl>
+    <es></es>
+    <fr></fr>
+    <it></it>
+    <nl></nl>
   </xsl:param>
   <xsl:param name="outfiletemplate"/>
-  <xsl:template match="name">
-     <xsl:param name="language"/>
-     <xsl:call-template name="yql">
-         <xsl:with-param name="query">
-            <xsl:call-template name="replace">
-               <xsl:with-param name="string">
-                   select * from google.translate where q="$text" and target="$language"
-               </xsl:with-param>
-               <xsl:with-param name="parameters">
-                 <text>
-                     <xsl:value-of select="."/>
-                 </text>
-                 <language>
-                     <xsl:value-of select="$language"/>
-                 </language>
-               </xsl:with-param>
-            </xsl:call-template>
+  
+  <xsl:template match="name|title|subtitle|intro">
+    <xsl:param name="targetLanguage"/>
+    <xsl:copy>
+      <xsl:call-template name="google">
+        <xsl:with-param name="text"><xsl:value-of select="."/></xsl:with-param>
+        <xsl:with-param name="targetLanguage">
+          <xsl:value-of select="$targetLanguage"/>
         </xsl:with-param>
-     </xsl:call-template>
+      </xsl:call-template>
+    </xsl:copy>
   </xsl:template>
+
+  <xsl:template match="category|readingtype|subtitle[@translate='terminology']">
+    <xsl:param name="targetLanguage"/>
+    <xsl:copy>
+      <xsl:call-template name="spreadsheet">
+        <xsl:with-param name="text"><xsl:value-of select="."/></xsl:with-param>
+        <xsl:with-param name="sourceLanguage">nl</xsl:with-param>
+        <xsl:with-param name="targetLanguage">
+          <xsl:value-of select="$targetLanguage"/>
+        </xsl:with-param>
+        <xsl:with-param name="csv">https://spreadsheets.google.com/pub?key=0Au659FdpCliwdDZCMUk1czY3Y2U5TjRDOWtkY1daTmc&amp;hl=nl&amp;single=true&amp;gid=0&amp;output=csv</xsl:with-param>
+      </xsl:call-template>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="passage">
+    <xsl:param name="targetLanguage"/>
+    <xsl:copy>
+      <xsl:call-template name="bible">
+        <xsl:with-param name="bibleref"><xsl:value-of select="../passagereference"/></xsl:with-param>
+        <xsl:with-param name="targetLanguage">
+          <xsl:value-of select="$targetLanguage"/>
+        </xsl:with-param>
+      </xsl:call-template>
+    </xsl:copy>
+  </xsl:template>
+
 </xsl:stylesheet>

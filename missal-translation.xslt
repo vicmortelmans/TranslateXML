@@ -12,7 +12,7 @@
   </xsl:param>
   <xsl:param name="outfiletemplate"/>
   
-  <xsl:template match="name|title|subtitle|intro">
+  <xsl:template match="name|title|subtitle|intro" mode="translation">
     <xsl:param name="targetLanguage"/>
     <xsl:copy>
       <xsl:call-template name="google">
@@ -24,7 +24,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="category|readingtype|subtitle[@translate='terminology']">
+  <xsl:template match="category|readingtype|subtitle[@translate='terminology']" mode="translation">
     <xsl:param name="targetLanguage"/>
     <xsl:copy>
       <xsl:call-template name="spreadsheet">
@@ -38,7 +38,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="passage">
+  <xsl:template match="passage" mode="translation">
     <xsl:param name="targetLanguage"/>
     <xsl:copy>
       <xsl:call-template name="bible">

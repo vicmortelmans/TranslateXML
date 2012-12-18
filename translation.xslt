@@ -47,7 +47,7 @@
   <xsl:template name="bibleref">
     <xsl:param name="targetLanguage"/>
     <xsl:param name="bibleref"/>
-    <xsl:variable name="bibleref">
+    <xsl:variable name="locbibleref">
       <xsl:call-template name="yql-xml">
         <xsl:with-param name="query">
           <xsl:call-template name="replace">
@@ -57,7 +57,7 @@
             </xsl:with-param>
             <xsl:with-param name="parametergroup">
               <bibleref>
-                <xsl:value-of select="."/>
+                <xsl:value-of select="$bibleref"/>
               </bibleref>
               <language>
                 <xsl:value-of select="$targetLanguage"/>
@@ -67,9 +67,9 @@
         </xsl:with-param>
       </xsl:call-template>
     </xsl:variable>
-    <xsl:value-of select="$bibleref//bibleref[1]/localbook"/>
+    <xsl:value-of select="$locbibleref//bibleref[1]/localbook"/>
     <xsl:text> </xsl:text>
-    <xsl:value-of select="$bibleref//bibleref[1]/chapterversereference"/>
+    <xsl:value-of select="$locbibleref//bibleref[1]/chapterversereference"/>
   </xsl:template>
   
   <xsl:template name="bible">
@@ -80,7 +80,7 @@
       <xsl:with-param name="query">
         <xsl:call-template name="replace">
           <xsl:with-param name="string">
-            <xsl:text>use "http://github.com/vicmortelmans/yql-tables/raw/master/bible/bible.xml" as bible.bible;</xsl:text>
+            <xsl:text>use "https://raw.github.com/vicmortelmans/yql-tables/master/bible/bible.bible.xml" as bible.bible;</xsl:text>
             <xsl:text>select * from bible.bible where bibleref='$bibleref' and language='$targetLanguage'</xsl:text>
           </xsl:with-param>
           <xsl:with-param name="parametergroup">
@@ -167,6 +167,7 @@
   <xsl:template name="yql-xml">
     <xsl:param name="query"/>
     <xsl:param name="cache" select="'yes'" tunnel="yes"/>
+    <!--xsl:message>YQL <xsl:value-of select="$query"/></xsl:message-->
     <!-- query.yahooapis.com -->
     <xsl:variable name="rest"
       select="concat('http://query.yahooapis.com/v1/public/yql','?q=',encode-for-uri($query))"/>
@@ -178,7 +179,15 @@
           </xsl:call-template>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:copy-of select="document($rest)/query/results"/>
+          <xsl:variable name="rest-with-diagnostics" select="concat($rest,'&amp;diagnostics=true')"/>
+          <xsl:variable name="restcontent">
+            <xsl:copy-of select="document($rest-with-diagnostics)"/>
+          </xsl:variable>
+          <xsl:variable name="results" select="$restcontent/query/results"/>
+          <xsl:if test="normalize-space($results) = ''">
+            <xsl:message>translation.xslt template yql-xml query returned no results - <xsl:value-of select="$query"/> - <xsl:copy-of select="$restcontent/query/diagnostics"/></xsl:message>
+          </xsl:if>
+          <xsl:copy-of select="$results"/>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>

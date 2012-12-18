@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions"
   xmlns:foo="http://www.stackoverflow.com"
   xmlns:saxon="http://saxon.sf.net/" extension-element-prefixes="saxon">
@@ -30,23 +30,39 @@
         </xsl:variable>
         <xsl:choose>
            <xsl:when test="normalize-space($result) != ''">
-              <saxon:try>
+              <xsl:try>
                 <xsl:result-document href="{$file}" format="xml">
                   <item url="{$url}">
                     <xsl:copy-of select="$result"/>
                   </item>
                 </xsl:result-document>
-                <saxon:catch errors="*">
+                <xsl:catch errors="*">
                   <xsl:message>Error caught while trying to write to <xsl:value-of select="$file"
                     /></xsl:message>
-                </saxon:catch>
-              </saxon:try>
+                </xsl:catch>
+              </xsl:try>
+              <xsl:copy-of select="$result"/>
            </xsl:when>
+          <xsl:when test="normalize-space($result) = '-'">
+            <xsl:message>cache.xslt: REST call returned '-', so string is left empty intentionally, storing '-' in cache. URL = <xsl:value-of select="$url"/></xsl:message>
+            <xsl:try>
+              <xsl:result-document href="{$file}" format="xml">
+                <item url="{$url}">
+                  <xsl:copy-of select="$result"/>
+                </item>
+              </xsl:result-document>
+              <xsl:catch errors="*">
+                <xsl:message>Error caught while trying to write to <xsl:value-of select="$file"
+                /></xsl:message>
+              </xsl:catch>
+            </xsl:try>
+            <xsl:copy-of select="$result"/>
+          </xsl:when>
            <xsl:otherwise>
              <xsl:message>cache.xslt: REST call returned empty string, not storing in cache, but returning anyhow. URL = <xsl:value-of select="$url"/></xsl:message>
+             <xsl:copy-of select="$result"/>
            </xsl:otherwise>
         </xsl:choose>
-        <xsl:copy-of select="$result"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>

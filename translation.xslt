@@ -181,6 +181,7 @@
         <xsl:otherwise>
           <xsl:variable name="rest-with-diagnostics" select="concat($rest,'&amp;diagnostics=true')"/>
           <xsl:variable name="restcontent">
+            <xsl:message>Fetching data from YQL [<xsl:value-of select="$rest-with-diagnostics"/>]</xsl:message>
             <xsl:copy-of select="document($rest-with-diagnostics)"/>
           </xsl:variable>
           <xsl:variable name="results" select="$restcontent/query/results"/>

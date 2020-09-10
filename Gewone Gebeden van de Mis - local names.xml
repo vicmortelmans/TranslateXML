@@ -1,0 +1,283 @@
+<data>
+  <_1>
+    <id>1</id>
+    <la>Asperges me</la>
+    <en>-</en>
+    <nl>-</nl>
+    <fr>-</fr>
+  </_1>
+  <_2>
+    <id>2</id>
+    <la>Vidi aquam</la>
+    <en>-</en>
+    <nl>-</nl>
+    <fr>-</fr>
+  </_2>
+  <_3>
+    <id>3</id>
+    <la>Ostende nobis</la>
+    <en>-</en>
+    <nl>-</nl>
+    <fr>-</fr>
+  </_3>
+  <_10>
+    <id>10</id>
+    <la>In nomine Patris</la>
+    <en>Sign of the cross</en>
+    <nl>Kruisteken</nl>
+    <fr>Signe de croix</fr>
+  </_10>
+  <_15>
+    <id>15</id>
+    <la>Introibo</la>
+    <en>-</en>
+    <nl>-</nl>
+    <fr>-</fr>
+  </_15>
+  <_20>
+    <id>20</id>
+    <la>Salutatio populi</la>
+    <en>Greeting</en>
+    <nl>Openingszegen</nl>
+    <fr>Salutation</fr>
+  </_20>
+  <_30>
+    <id>30</id>
+    <la>Actus paenitentialis</la>
+    <en>Act of penitence</en>
+    <nl>Schuldbelijdenis</nl>
+    <fr>Préparation pénitentielle</fr>
+  </_30>
+  <_35>
+    <id>35</id>
+    <la>Actus paenitentialis</la>
+    <en>Act of penitence</en>
+    <nl>Schuldbelijdenis</nl>
+    <fr>Préparation pénitentielle</fr>
+  </_35>
+  <_40>
+    <id>40</id>
+    <la>Actus paenitentialis</la>
+    <en>Act of penitence</en>
+    <nl>Schuldbelijdenis</nl>
+    <fr>Préparation pénitentielle</fr>
+  </_40>
+  <_50>
+    <id>50</id>
+    <la>Misericordiam</la>
+    <en>-</en>
+    <nl>-</nl>
+    <fr>-</fr>
+  </_50>
+  <_60>
+    <id>60</id>
+    <la>Misericordiam</la>
+    <en>-</en>
+    <nl>-</nl>
+    <fr>-</fr>
+  </_60>
+  <_70>
+    <id>70</id>
+    <la>Kyrie</la>
+    <en>-</en>
+    <nl>-</nl>
+    <fr>-</fr>
+  </_70>
+  <_80>
+    <id>80</id>
+    <la>Kyrie</la>
+    <en>-</en>
+    <nl>-</nl>
+    <fr>-</fr>
+  </_80>
+  <_90>
+    <id>90</id>
+    <la>Gloria</la>
+    <en>Glory</en>
+    <nl>Eer aan God</nl>
+    <fr>-</fr>
+  </_90>
+  <_100>
+    <id>100</id>
+    <la>Lectio prima</la>
+    <en>First Reading</en>
+    <nl>Eerste Lezing</nl>
+    <fr>Première Lecture</fr>
+  </_100>
+  <_110>
+    <id>110</id>
+    <la>Lectio secunda - Epistula</la>
+    <en>Second Reading - Epistle</en>
+    <nl>Tweede Lezing - Epistel</nl>
+    <fr>Deuxième Lecture - Epître</fr>
+  </_110>
+  <_120>
+    <id>120</id>
+    <la>Evangelium</la>
+    <en>Gospel</en>
+    <nl>Evangelie</nl>
+    <fr>Evangile</fr>
+  </_120>
+  <_130>
+    <id>130</id>
+    <la>Homilia</la>
+    <en>Homily</en>
+    <nl>Homilie</nl>
+    <fr>Homélie</fr>
+  </_130>
+  <_140>
+    <id>140</id>
+    <la>Credo</la>
+    <en>Creed</en>
+    <nl>Geloofsbelijdenis</nl>
+    <fr>-</fr>
+  </_140>
+  <_150>
+    <id>150</id>
+    <la>Symbolum Apostolorum</la>
+    <en>Apostles Creed</en>
+    <nl>Geloofsbelijdenis van de apostelen</nl>
+    <fr>Le Symbole</fr>
+  </_150>
+  <_160>
+    <id>160</id>
+    <la>Oratio fidelium</la>
+    <en>Prayer of the faithful</en>
+    <nl>Voorbeden</nl>
+    <fr>Prière universelle</fr>
+  </_160>
+  <_170>
+    <id>170</id>
+    <la>Offertorium</la>
+    <en>Offertory</en>
+    <nl>Offerande</nl>
+    <fr>Offertoire</fr>
+  </_170>
+  <_180>
+    <id>180</id>
+    <la>Sursum Corda</la>
+    <en>Opening dialogue</en>
+    <nl>Verheft uw hart</nl>
+    <fr>-</fr>
+  </_180>
+  <_190>
+    <id>190</id>
+    <la>Sanctus</la>
+    <en>Holy</en>
+    <nl>Heilig</nl>
+    <fr>-</fr>
+  </_190>
+  <_200>
+    <id>200</id>
+    <la>Benedictus</la>
+    <en>Blessed</en>
+    <nl>Gezegend</nl>
+    <fr>-</fr>
+  </_200>
+  <_210>
+    <id>210</id>
+    <la>Consecratio</la>
+    <en>Consecration</en>
+    <nl>Consecratie</nl>
+    <fr>Consécration</fr>
+  </_210>
+  <_220>
+    <id>220</id>
+    <la>Consecratio</la>
+    <en>Consecration</en>
+    <nl>Consecratie</nl>
+    <fr>Consécration</fr>
+  </_220>
+  <_230>
+    <id>230</id>
+    <la>Mysterium fidei</la>
+    <en>Memorial Acclamation</en>
+    <nl>Mysterie van het geloof</nl>
+    <fr>-</fr>
+  </_230>
+  <_240>
+    <id>240</id>
+    <la>Per ipsum</la>
+    <en>Doxology</en>
+    <nl>Doxologie</nl>
+    <fr>Doxologie</fr>
+  </_240>
+  <_250>
+    <id>250</id>
+    <la>Pater noster</la>
+    <en>Our Father</en>
+    <nl>Onzevader</nl>
+    <fr>Notre Père</fr>
+  </_250>
+  <_260>
+    <id>260</id>
+    <la>Libera nos</la>
+    <en>Embolism</en>
+    <nl>Embolisme</nl>
+    <fr>-</fr>
+  </_260>
+  <_270>
+    <id>270</id>
+    <la>Libera nos</la>
+    <en>Embolism</en>
+    <nl>Embolisme</nl>
+    <fr>-</fr>
+  </_270>
+  <_280>
+    <id>280</id>
+    <la>Pax Domini</la>
+    <en>The Peace</en>
+    <nl>Vredeswens</nl>
+    <fr>Rite de la paix</fr>
+  </_280>
+  <_290>
+    <id>290</id>
+    <la>Agnus Dei</la>
+    <en>Lamb of God</en>
+    <nl>Lam Gods</nl>
+    <fr>-</fr>
+  </_290>
+  <_300>
+    <id>300</id>
+    <la>Domine non sum dignus</la>
+    <en>Lord, I am not worthy</en>
+    <nl>Heer, ik ben niet waardig</nl>
+    <fr>-</fr>
+  </_300>
+  <_310>
+    <id>310</id>
+    <la>Communio</la>
+    <en>Communion</en>
+    <nl>Communie</nl>
+    <fr>Communion</fr>
+  </_310>
+  <_320>
+    <id>320</id>
+    <la>Communio</la>
+    <en>Communion</en>
+    <nl>Communie</nl>
+    <fr>Communion</fr>
+  </_320>
+  <_330>
+    <id>330</id>
+    <la>Ritus conclusionis</la>
+    <en>Dismissal</en>
+    <nl>Slotzegen</nl>
+    <fr>Bénédiction</fr>
+  </_330>
+  <_340>
+    <id>340</id>
+    <la>Ritus conclusionis</la>
+    <en>Dismissal</en>
+    <nl>Slotzegen</nl>
+    <fr>Bénédiction</fr>
+  </_340>
+  <_350>
+    <id>350</id>
+    <la>Ultimum evangelium</la>
+    <en>The Last Gospel</en>
+    <nl>Het Laatste Evangelie</nl>
+    <fr>Dernier Evangile</fr>
+  </_350>
+</data>
+

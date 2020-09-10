@@ -3,3 +3,7 @@ TranslateXML Readme
 Modular XSLT toolset to translate XML-files using YQL tables.
 
 Translate the contents of an XML-file using YQL resources, e.g. the google.translate open table, or the xml open table, accessing online xml terminology lists.
+
+Running the tests:
+
+java net.sf.saxon.Transform -s:test.xslt -xsl:test.xslt

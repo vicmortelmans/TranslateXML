@@ -103,38 +103,7 @@
     </xsl:call-template>
   </xsl:template>
 
-  <xsl:template name="replace">
-    <!-- copied from liturgical.calendar.build-ruleset.xslt and added encoding func -->
-    <xsl:param name="string"/>
-    <xsl:param name="parametergroup"/>
-    <xsl:param name="encode" select="'no'"/>
-    <xsl:choose>
-      <xsl:when test="not(matches($string,'\$'))">
-        <xsl:value-of select="$string"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:variable name="replacement">
-          <xsl:choose>
-            <xsl:when test="$encode = 'yes'">
-              <xsl:value-of select="encode-for-uri($parametergroup/*[1])"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="$parametergroup/*[1]"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="replace"
-          select="replace($string,concat('\$',local-name($parametergroup/*[1])),$replacement)"/>
-        <xsl:call-template name="replace">
-          <xsl:with-param name="string" select="$replace"/>
-          <xsl:with-param name="parametergroup">
-            <xsl:copy-of select="$parametergroup/*[position() &gt; 1]"/>
-          </xsl:with-param>
-          <xsl:with-param name="encode" select="$encode"/>
-        </xsl:call-template>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
+  <!-- template named "replace" moved to translate.xslt -->
 
   <!-- http://stackoverflow.com/questions/6753343/using-xsl-to-make-a-hash-of-xml-file -->
   <xsl:function name="foo:checksum" as="xs:integer">
